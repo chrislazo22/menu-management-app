@@ -12,6 +12,10 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.find(params[:id])
   end
 
+  def edit
+    @menu_item = MenuItem.find(params[:id])
+  end
+
   def create
     @menu_item = MenuItem.new(menu_item_params)
 
@@ -19,6 +23,15 @@ class MenuItemsController < ApplicationController
       redirect_to root_path, notice: "Menu Item was Successfully Added"
     else
       render :new
+    end
+  end
+
+  def update
+    @menu_item = MenuItem.find(params[:id])
+    if @menu_item.update(menu_item_params)
+      redirect_to root_path, notice:"Menu Item was Successfully Updated"
+    else
+      render 'edit'
     end
   end
 
