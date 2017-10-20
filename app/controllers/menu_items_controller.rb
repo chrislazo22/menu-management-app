@@ -1,5 +1,5 @@
 class MenuItemsController < ApplicationController
-
+before_action :set_menu_item, only: [:show, :edit, :update, :destroy]
   def index
     @menu_items = MenuItem.all
   end
@@ -9,11 +9,9 @@ class MenuItemsController < ApplicationController
   end
 
   def show
-    @menu_item = MenuItem.find(params[:id])
   end
 
   def edit
-    @menu_item = MenuItem.find(params[:id])
   end
 
   def create
@@ -27,7 +25,6 @@ class MenuItemsController < ApplicationController
   end
 
   def update
-    @menu_item = MenuItem.find(params[:id])
     if @menu_item.update(menu_item_params)
       redirect_to root_path, notice:"Menu Item was Successfully Updated"
     else
@@ -36,12 +33,15 @@ class MenuItemsController < ApplicationController
   end
 
   def destroy
-    @menu_item = MenuItem.find(params[:id])
     @menu_item.destroy
     redirect_to root_path, notice: "Menu Item was Deleted"
   end
 
   private
+
+  def set_menu_item
+    @menu_item = MenuItem.find(params[:id])
+  end
 
   def menu_item_params
     params.require(:menu_item).permit(:name, :description, :category, :price)
