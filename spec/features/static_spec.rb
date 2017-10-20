@@ -9,7 +9,7 @@ describe 'navigate' do
       expect(page.status_code).to eq(200)
     end
 
-    it 'has a link to create menu' do
+    it 'has a link to create new menu item' do
       find_link('Create Menu Item')
     end
   end
