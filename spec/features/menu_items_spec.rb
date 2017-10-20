@@ -52,4 +52,15 @@ describe 'form' do
       expect(page).to have_content("Two Pancakes")
     end
   end
+
+  describe 'delete' do
+    before do
+      @menu_item = MenuItem.create name: "Pancake", description: "This is a pancake", category: "Entree", price: 10.00, id: 1
+    end
+    it 'allows user to delete menu item' do
+      visit menu_item_path(@menu_item)
+      click_on("Delete Menu Item")
+      expect(page.status_code).to eq(200)
+    end
+  end
 end

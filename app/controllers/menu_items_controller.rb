@@ -35,6 +35,12 @@ class MenuItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @menu_item = MenuItem.find(params[:id])
+    @menu_item.destroy
+    redirect_to root_path, notice: "Menu Item was Deleted"
+  end
+
   private
 
   def menu_item_params
