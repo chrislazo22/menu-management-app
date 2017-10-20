@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby 2.3.1p112
+rails 5.1.4
 
-Things you may want to cover:
+## User Stories (Required)
 
-* Ruby version
+* A user should be able to enter, edit, and remove menu items. The menu items have a name, a description, a category (such as appetizer, main course, side, dessert), and a price. (Unless you do the optional story, we’re not concerned with user logins or security)
 
-* System dependencies
+* A user should be able to view the menu, with items grouped by category, and see the names, descriptions, and prices.
 
-* Configuration
+* The menu view should allow users to select items off the menu. On submitting the form, they should be able to see the total price of their potential order. A user should be able to adjust the quantity of items in their order.
 
-* Database creation
+## User Stories (Optional)
 
-* Database initialization
+* When the user sees their total order, they can add an optional tip of 10%, 15%, or 20%, and resubmit the order to see the total with tip.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
