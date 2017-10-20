@@ -8,6 +8,10 @@ class MenuItemsController < ApplicationController
     @menu_item = MenuItem.new
   end
 
+  def show
+    @menu_item = MenuItem.find(params[:id])
+  end
+
   def create
     @menu_item = MenuItem.new(menu_item_params)
 

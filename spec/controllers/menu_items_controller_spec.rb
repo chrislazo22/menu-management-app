@@ -7,6 +7,7 @@ RSpec.describe MenuItemsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
   describe 'GET #new' do
     it 'can be reached successfully' do
       get :new

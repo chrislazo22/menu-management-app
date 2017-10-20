@@ -22,4 +22,14 @@ describe 'form' do
 
     expect(page).to have_content("Pancakes")
   end
+
+  describe 'show' do
+    before do
+      @menu_item = MenuItem.create name: "Pancake", description: "This is a pancake", category: "Entree", price: 10.00, id: 1
+    end
+    it 'can be reached successfully' do
+      visit menu_item_path(@menu_item)
+      expect(page.status_code).to eq(200)
+    end
+  end
 end
