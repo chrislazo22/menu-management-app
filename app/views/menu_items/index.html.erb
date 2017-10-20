@@ -1,0 +1,28 @@
+<h1>Restaurant Name</h1>
+
+<%= link_to "Create Menu Item", new_menu_item_path %>
+
+<% if @menu_items.blank? %>
+  <p>There are no menu items, please click <%= link_to "Create Menu Item", new_menu_item_path %> to create a new menu item </p>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% @menu_items.each do |menu_item| %>
+          <td><%= menu_item.name %></td>
+          <td><%= menu_item.description %></td>
+          <td><%= menu_item.category %></td>
+          <td><%= menu_item.price %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

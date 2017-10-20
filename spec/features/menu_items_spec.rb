@@ -1,5 +1,15 @@
 require 'rails_helper'
 
+describe 'homepage' do
+  before do
+    visit root_path
+  end
+
+  xit 'has a link to create new menu item' do
+    find_link('Create Menu Item')
+  end
+end
+
 describe 'form' do
   it 'has the correct input criteria' do
     visit new_menu_item_path
@@ -10,5 +20,6 @@ describe 'form' do
 
     click_on "Submit"
 
+    expect(page).to have_content("Pancakes")
   end
 end
