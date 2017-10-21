@@ -2,16 +2,16 @@
 
 <%= form_for @menu_item do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description %><br>
 
   <%= f.label :category %>
-  <%= f.text_field :category %>
+  <%= f.select :category, options_for_select(['Appetizer', 'Main Course', 'Side Dish', 'Dessert']) %><br>
 
   <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.text_field :price %><br>
 
   <%= f.submit "Submit" %>
 <% end %>
