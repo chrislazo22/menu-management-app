@@ -63,4 +63,11 @@ describe 'form' do
       expect(page.status_code).to eq(200)
     end
   end
+
+  describe 'links' do
+    it 'has a link to go to the root page' do
+      visit new_menu_item_path
+      find_link('Back')
+    end
+  end
 end
