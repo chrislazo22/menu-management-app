@@ -18,6 +18,4 @@ rails 5.1.4
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
 
 ### Next Steps
-* Category drop down menu, for items
-* line breaks between items (new_menu_item_path)
 * Homepage: categorize menu items

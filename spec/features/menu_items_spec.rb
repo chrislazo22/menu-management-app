@@ -15,7 +15,7 @@ describe 'form' do
     visit new_menu_item_path
     fill_in "menu_item[name]", with: "Pancakes"
     fill_in "menu_item[description]", with: "Description of Pancakes"
-    fill_in "menu_item[category]", with: "Main Entree"
+    select("Main Course", :from => "menu_item_category" )
     fill_in "menu_item[price]", with: "$10.00"
 
     click_on "Submit"
@@ -24,10 +24,14 @@ describe 'form' do
   describe 'show' do
     before do
       @menu_item = MenuItem.create name: "Pancake", description: "This is a pancake", category: "Entree", price: 10.00, id: 1
+      visit menu_item_path(@menu_item)
     end
     it 'can be reached successfully' do
-      visit menu_item_path(@menu_item)
       expect(page.status_code).to eq(200)
+    end
+
+    it 'has a back link' do
+      find_link("Back")
     end
   end
 
