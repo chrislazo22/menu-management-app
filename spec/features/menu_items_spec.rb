@@ -19,8 +19,6 @@ describe 'form' do
     fill_in "menu_item[price]", with: "$10.00"
 
     click_on "Submit"
-
-    expect(page).to have_content("Pancakes")
   end
 
   describe 'show' do

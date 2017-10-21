@@ -16,3 +16,9 @@ rails 5.1.4
 * When the user sees their total order, they can add an optional tip of 10%, 15%, or 20%, and resubmit the order to see the total with tip.
 
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
+
+### Next Steps
+* Menu items validations
+* Category drop down menu, for items
+* line breaks between items (new_menu_item_path)
+* Homepage: categorize menu items
