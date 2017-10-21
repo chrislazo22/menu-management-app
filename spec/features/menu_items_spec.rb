@@ -8,17 +8,17 @@ describe 'homepage' do
   xit 'has a link to create new menu item' do
     find_link('Create Menu Item')
   end
-end
 
-describe 'form' do
-  it 'has the correct input criteria' do
-    visit new_menu_item_path
-    fill_in "menu_item[name]", with: "Pancakes"
-    fill_in "menu_item[description]", with: "Description of Pancakes"
-    select("Main Course", :from => "menu_item_category" )
-    fill_in "menu_item[price]", with: "$10.00"
+  describe 'form' do
+    it 'has the correct input criteria' do
+      visit new_menu_item_path
+      fill_in "menu_item[name]", with: "Pancakes"
+      fill_in "menu_item[description]", with: "Description of Pancakes"
+      select("Main Course", :from => "menu_item_category" )
+      fill_in "menu_item[price]", with: "$10.00"
 
-    click_on "Submit"
+      click_on "Submit"
+    end
   end
 
   describe 'show' do
@@ -37,7 +37,7 @@ describe 'form' do
 
   describe 'edit' do
     before do
-      @menu_item = MenuItem.create name: "Pancake", description: "This is a pancake", category: "Entree", price: 10.00, id: 1
+      @menu_item = MenuItem.create name: "Pancake", description: "This is a pancake", category: "Main Course", price: 10.00, id: 1
     end
     it 'can be reached successfully' do
       visit menu_item_path(@menu_item)

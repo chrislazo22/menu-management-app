@@ -19,3 +19,5 @@ rails 5.1.4
 
 ### Next Steps
 * Homepage: categorize menu items
+* Add bootstrap
+* User story 3
