@@ -18,6 +18,5 @@ rails 5.1.4
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
 
 ### Next Steps
-* Homepage: categorize menu items
 * Add bootstrap
 * User story 3
