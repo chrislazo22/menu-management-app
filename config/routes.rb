@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :menu_items
   resources :order_items
-  resources :carts, only: [:show]
+  resource :carts, only: [:show]
 end
