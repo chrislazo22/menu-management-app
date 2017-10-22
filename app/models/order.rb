@@ -8,6 +8,6 @@ class Order < ApplicationRecord
 
   private
   def set_subtotal
-    self[:subtotoal] = subtotal
+    self[:subtotal] = subtotal
   end
 end
