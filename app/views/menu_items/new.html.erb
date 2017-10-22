@@ -8,7 +8,7 @@
   <%= f.text_area :description %><br>
 
   <%= f.label :category %>
-  <%= f.select :category, options_for_select(['Appetizer', 'Main Course', 'Side Dish', 'Dessert']) %><br>
+  <%= f.select :category, options_for_select(['Appetizer', 'Main Course', 'Side Dish', 'Dessert']), { prompt: "Choose a category" }, class: "browser-default" %><br>
 
   <%= f.label :price %>
   <%= f.text_field :price %><br>
