@@ -1,56 +1,66 @@
-<h1>Restaurant Name</h1>
+<div class="parallax-container">
+  <div class="container">
+    <%= render 'layouts/navbar' %>
+    <section>
+      <div class="callout">
+        <h1 class="center-align white-text">Cafe TXI</h1>
+      </div>
+    </section>
+  </div>
+  <div class="parallax"><img src="http://www.nobrowcoffee.com/wp-content/uploads/2016/04/coffee-wallpaper-1306-1433-hd-wallpapers.jpg"></div>
+</div>
 
-<%= link_to "Create Menu Item", new_menu_item_path %>
-
-<% if @menu_items.blank? %>
-  <p>There are no menu items, please click <%= link_to "Create Menu Item", new_menu_item_path %> to create a new menu item </p>
-<% else %>
-  <div class="menu_category">
-    <h2>Appetizers</h2>
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.category == "Appetizer" %>
-        <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
-        <%= menu_item.description %><br>
-        <%= form_for(@order_item, remote: true) do |f| %>
-          <%= f.hidden_field :menu_item_id, value: menu_item.id %>
-          <%= menu_item.price %>
-          <%= f.text_field :quantity, value: 1, min: 1 %>
-          <%= f.submit "Add to Cart" %>
+<div class="container">
+  <% if @menu_items.blank? %>
+    <p>There are no menu items, please click <%= link_to "Create Menu Item", new_menu_item_path %> to create a new menu item </p>
+  <% else %>
+    <div class="menu_category">
+      <h2>Appetizers</h2>
+      <% @menu_items.each do |menu_item| %>
+        <% if menu_item.category == "Appetizer" %>
+          <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
+          <%= menu_item.description %><br>
+          <%= form_for(@order_item, remote: true) do |f| %>
+            <%= f.hidden_field :menu_item_id, value: menu_item.id %>
+            <%= menu_item.price %>
+            <%= f.text_field :quantity, value: 1, min: 1 %>
+            <%= f.submit "Add to Cart" %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="menu_category">
-    <h2>Main Course</h2>
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.category == "Main Course" %>
-        <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
-        <%= menu_item.description %><br>
-        <%= menu_item.price %>
+    <div class="menu_category">
+      <h2>Main Course</h2>
+      <% @menu_items.each do |menu_item| %>
+        <% if menu_item.category == "Main Course" %>
+          <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
+          <%= menu_item.description %><br>
+          <%= menu_item.price %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="menu_category">
-    <h2>Side Dish</h2>
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.category == "Side Dish" %>
-        <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
-        <%= menu_item.description %><br>
-        <%= menu_item.price %>
+    <div class="menu_category">
+      <h2>Side Dish</h2>
+      <% @menu_items.each do |menu_item| %>
+        <% if menu_item.category == "Side Dish" %>
+          <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
+          <%= menu_item.description %><br>
+          <%= menu_item.price %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
 
-  <div class="menu_category">
-    <h2>Dessert</h2>
-    <% @menu_items.each do |menu_item| %>
-      <% if menu_item.category == "Dessert" %>
-        <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
-        <%= menu_item.description %><br>
-        <%= menu_item.price %>
+    <div class="menu_category">
+      <h2>Dessert</h2>
+      <% @menu_items.each do |menu_item| %>
+        <% if menu_item.category == "Dessert" %>
+          <%= link_to menu_item.name, menu_item_path(menu_item) %><br>
+          <%= menu_item.description %><br>
+          <%= menu_item.price %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

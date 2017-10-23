@@ -1,0 +1,55 @@
+<% if current_page?(root_path) %>
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <div class="row">
+          <div class="col s12">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="<%= active?(root_path) %>">
+              <%= link_to "Home", root_path %>
+            </li>
+            <li class="<%= active?(new_menu_item_path) %>">
+              <%= link_to "Create Menu Item", new_menu_item_path %>
+            </li>
+            <li>
+              <div class="cart">
+                <%= render 'layouts/cart' %>
+              </div>
+            </li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Create Menu Item", new_menu_item_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<% else %>
+  <nav class="brown z-depth-0">
+    <div class="nav-wrapper">
+      <div class="row">
+          <div class="col s12">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="<%= active?(root_path) %>">
+              <%= link_to "Home", root_path %>
+            </li>
+            <li class="<%= active?(new_menu_item_path) %>">
+              <%= link_to "Create Menu Item", new_menu_item_path %>
+            </li>
+            <li>
+              <div class="cart">
+                <%= render 'layouts/cart' %>
+              </div>
+            </li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Create Menu Item", new_menu_item_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<% end %>
