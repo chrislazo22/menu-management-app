@@ -1,19 +1,4 @@
-<h1>Edit Menu Item</h1>
-
-<%= form_for @menu_item do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %><br>
-
-  <%= f.label :category %>
-  <%= f.select :category, options_for_select(['Appetizer', 'Main Course', 'Side Dish', 'Dessert']) %><br>
-
-  <%= f.label :price %>
-  <%= f.text_field :price %><br>
-
-  <%= f.submit "Submit" %>
-<% end %>
-
-<%= link_to "Back", root_path %>
+<div class="container">
+  <h2 class="center-align">Edit Menu Item</h2>
+  <%= render 'form' %>
+</div>
