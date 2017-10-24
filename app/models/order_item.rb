@@ -2,6 +2,8 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :menu_item
 
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
   before_save :set_unit_price
   before_save  :set_total_price
 
