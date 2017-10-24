@@ -10,14 +10,18 @@ describe 'homepage' do
   end
 
   describe 'form' do
-    it 'has the correct input criteria' do
+    it 'can create a menu item with/without image' do
       visit new_menu_item_path
       fill_in "menu_item[name]", with: "Pancakes"
       fill_in "menu_item[description]", with: "Description of Pancakes"
       select("Main Course", :from => "menu_item_category" )
       fill_in "menu_item[price]", with: "$10.00"
+      attach_file('Image', "spec/files/sample_image.jpg")
 
       click_on "Submit"
+
+      expect(page).to have_content('Pancakes')
+      expect(page).to have_css("img[src*='sample_image.jpg']")
     end
   end
 
