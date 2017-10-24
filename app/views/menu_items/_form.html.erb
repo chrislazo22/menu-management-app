@@ -2,7 +2,7 @@
   <div class="col s10 offset-s1">
     <div class="card">
       <div class="card-content center-align">
-        <%= form_for @menu_item do |f| %>
+        <%= form_for @menu_item, html: { multipart: true } do |f| %>
           <span class="card-title">Name</span>
           <%= f.text_field :name %><br>
 
@@ -14,6 +14,9 @@
 
           <span class="card-title">Price</span>
           <%= f.text_field :price %><br>
+
+          <span class="card-title">Image</span>
+          <%= f.file_field :image %><br>
 
           <%= f.submit "Submit" %>
         <% end %>

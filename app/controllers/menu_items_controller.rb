@@ -45,6 +45,6 @@ before_action :set_menu_item, only: [:show, :edit, :update, :destroy]
   end
 
   def menu_item_params
-    params.require(:menu_item).permit(:name, :description, :category, :price)
+    params.require(:menu_item).permit(:name, :description, :category, :price, :image)
   end
 end

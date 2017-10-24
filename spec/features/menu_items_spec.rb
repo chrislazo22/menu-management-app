@@ -16,7 +16,7 @@ describe 'homepage' do
       fill_in "menu_item[description]", with: "Description of Pancakes"
       select("Main Course", :from => "menu_item_category" )
       fill_in "menu_item[price]", with: "$10.00"
-      attach_file('Image', "spec/files/sample_image.jpg")
+      attach_file("menu_item[image]", "spec/files/sample_image.jpg")
 
       click_on "Submit"
 
