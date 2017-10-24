@@ -29,10 +29,6 @@ describe 'homepage' do
     it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
-
-    it 'has a back link' do
-      find_link("Back")
-    end
   end
 
   describe 'edit' do
@@ -61,15 +57,8 @@ describe 'homepage' do
     end
     it 'allows user to delete menu item' do
       visit menu_item_path(@menu_item)
-      click_on("Delete Menu Item")
+      click_on("Delete")
       expect(page.status_code).to eq(200)
-    end
-  end
-
-  describe 'links' do
-    it 'has a link to go to the root page' do
-      visit new_menu_item_path
-      find_link('Back')
     end
   end
 end
