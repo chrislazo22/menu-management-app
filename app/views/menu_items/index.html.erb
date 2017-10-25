@@ -13,7 +13,7 @@
         <td><%= menu_item.name %></td>
         <td><%= menu_item.description %></td>
         <td><%= menu_item.category %></td>
-        <td><%= menu_item.price %></td>
+        <td><%= number_to_currency menu_item.price %></td>
       </tr>
       <% end %>
     </tbody>

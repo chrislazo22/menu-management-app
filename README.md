@@ -18,5 +18,19 @@ rails 5.1.4
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
 
 ### Next Steps
-* Add bootstrap
-* User story 3
+* Link Cafe TXI to root_path
+* seed data with images
+* seed data with admin login
+* pick nice font for Cafe TXI
+* fix image missing message
+* Price for index table number_to_currency
+* fix all buttons
+* link to show page in index view (admin)
+* Delete link in cart to icon
+* in show page edit delete links to icons
+* refactor index view code
+* refractor specs if needed
+* check all validation
+* add create menu item button index page (admin)
+* delete unneeded routes
+* fix side bar make it a dropdown
