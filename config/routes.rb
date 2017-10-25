@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'menu_items#index'
+  root to: 'static#menu'
 
   resources :menu_items
   resources :order_items, only: [:create, :update, :destroy]
