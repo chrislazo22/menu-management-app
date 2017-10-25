@@ -18,8 +18,6 @@
     <% if !current_page?(root_path) %>
       <%= render 'layouts/navbar' %>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
@@ -29,6 +27,7 @@
     <script>
       $(".button-collapse").sideNav();
       $('.parallax').parallax();
+      $(".dropdown-button").dropdown({ hover: false });
     </script>
   </body>
 </html>

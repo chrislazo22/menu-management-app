@@ -3,6 +3,13 @@
     <div class="nav-wrapper">
       <div class="row">
           <div class="col s12">
+<% else %>
+  <nav class="brown z-depth-0">
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo">Cafe TXI</a>
+        <div class="row">
+<% end %>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li class="<%= active?(root_path) %>">
@@ -11,9 +18,14 @@
             <li class="<%= active?(menu_items_path) %>">
               <%= link_to "Admin", menu_items_path %>
             </li>
-            <li class="<%= active?(new_menu_item_path) %>">
-              <%= link_to "Create Menu Item", new_menu_item_path %>
-            </li>
+            <% if current_user %>
+              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Other<i class="material-icons right">arrow_drop_down</i></a></li>
+              <ul id="dropdown1" class="dropdown-content">
+                <li><%= link_to "Add Menu Item", new_menu_item_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            <% end %>
             <li>
               <div class="cart">
                 <%= render 'layouts/cart' %>
@@ -28,37 +40,3 @@
       </div>
     </div>
   </nav>
-<% else %>
-<nav class="brown z-depth-0">
-  <div class="nav-wrapper">
-    <div class="container">
-      <a href="#" class="brand-logo">Cafe TXI</a>
-      <div class="row">
-          <div class="col s12">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li class="<%= active?(root_path) %>">
-              <%= link_to "Home", root_path %>
-            </li>
-            <li class="<%= active?(menu_items_path) %>">
-              <%= link_to "Admin", menu_items_path %>
-            </li>
-            <li class="<%= active?(new_menu_item_path) %>">
-              <%= link_to "Create Menu Item", new_menu_item_path %>
-            </li>
-            <li>
-              <div class="cart">
-                <%= render 'layouts/cart' %>
-              </div>
-            </li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Create Menu Item", new_menu_item_path %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-<% end %>

@@ -3,10 +3,8 @@ require 'rails_helper'
 describe 'homepage' do
   before do
     visit root_path
-  end
-
-  xit 'has a link to create new menu item' do
-    find_link('Create Menu Item')
+    @user = User.create(email: "admin@admin.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+    login_as(@user, :scope => :user)
   end
 
   describe 'form' do
@@ -21,7 +19,6 @@ describe 'homepage' do
       click_on "Submit"
 
       expect(page).to have_content('Pancakes')
-      expect(page).to have_css("img[src*='sample_image.jpg']")
     end
   end
 

@@ -1,5 +1,7 @@
 class MenuItemsController < ApplicationController
 before_action :set_menu_item, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, only: [:index, :new, :edit, :update, :destory]
+
   def index
     @menu_items = MenuItem.all
     @order_item = current_order.order_items.new
