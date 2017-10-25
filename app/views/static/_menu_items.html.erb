@@ -1,0 +1,71 @@
+<h3>Appetizers</h3>
+<% @menu_items.each do |menu_item| %>
+  <% if menu_item.category == "Appetizer" %>
+    <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
+    <%= menu_item.description %><br>
+    <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
+    <%= form_for(@order_item, remote: true) do |f| %>
+      <%= f.hidden_field :menu_item_id, value: menu_item.id %>
+      <div class="card-action">
+        <div class="col s4 offset-s2">
+          <%= f.number_field :quantity, value: 1, min: 1 %>
+        </div>
+          <%= f.submit "Add to Cart", class: 'waves-effect btn' %><br>
+      </div>
+    <% end %>
+  <% end %>
+<% end %><br>
+
+<h3>Main Course</h3>
+<% @menu_items.each do |menu_item| %>
+  <% if menu_item.category == "Main Course" %>
+    <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
+    <%= menu_item.description %><br>
+    <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
+    <%= form_for(@order_item, remote: true) do |f| %>
+      <%= f.hidden_field :menu_item_id, value: menu_item.id %>
+      <div class="card-action">
+        <div class="col s4 offset-s2">
+          <%= f.number_field :quantity, value: 1, min: 1 %>
+        </div>
+        <%= f.submit "Add to Cart", class: 'waves-effect btn' %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %><br>
+
+<h3>Side Dish</h3>
+<% @menu_items.each do |menu_item| %>
+  <% if menu_item.category == "Side Dish" %>
+    <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
+    <%= menu_item.description %><br>
+    <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
+    <%= form_for(@order_item, remote: true) do |f| %>
+      <%= f.hidden_field :menu_item_id, value: menu_item.id %>
+      <div class="card-action">
+        <div class="col s4 offset-s2">
+          <%= f.number_field :quantity, value: 1, min: 1 %>
+        </div>
+          <%= f.submit "Add to Cart", class: 'waves-effect btn' %><br>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h3>Dessert</h3>
+<% @menu_items.each do |menu_item| %>
+  <% if menu_item.category == "Dessert" %>
+    <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
+    <%= menu_item.description %><br>
+    <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
+    <%= form_for(@order_item, remote: true) do |f| %>
+      <%= f.hidden_field :menu_item_id, value: menu_item.id %>
+      <div class="card-action">
+        <div class="col s4 offset-s2">
+          <%= f.number_field :quantity, value: 1, min: 1 %>
+        </div>
+        <%= f.submit "Add to Cart", class: 'waves-effect btn' %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

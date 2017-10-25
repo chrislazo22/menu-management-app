@@ -1,5 +1,6 @@
 <div class="container">
   <h2 class="center-align">Menu Items</h2>
+  <h5 class='right-align'><%= link_to '<i class="small material-icons">add_circle_outline</i> New Menu Item'.html_safe, new_menu_item_path %></h5>
   <table class="bordered highlight">
     <thead>
       <th>Name</th>
@@ -10,12 +11,12 @@
     <tbody>
       <% @menu_items.each do |menu_item| %>
       <tr>
-        <td><%= menu_item.name %></td>
+        <td><%= link_to menu_item.name, menu_item_path(menu_item) %></td>
         <td><%= menu_item.description %></td>
         <td><%= menu_item.category %></td>
         <td><%= number_to_currency menu_item.price %></td>
       </tr>
       <% end %>
     </tbody>
-  </table>
+  </table><br>
 </div>

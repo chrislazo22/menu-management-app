@@ -34,7 +34,12 @@
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Create Menu Item", new_menu_item_path %></li>
+            <li><%= link_to "Admin", menu_items_path %></li>
+            <li><%= link_to "Create Menu Item", new_menu_item_path if current_user %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete if current_user %></li>
+            <li>
+                <%= render 'layouts/cart' %>
+            </li>
           </ul>
         </div>
       </div>

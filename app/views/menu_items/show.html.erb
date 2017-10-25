@@ -30,8 +30,8 @@
         <% if current_user %>
           <td>Edit/Delete:</td>
           <td>
-            <%= link_to "Edit", edit_menu_item_path(@menu_item) %> |
-            <%= link_to "Delete", menu_item_path(@menu_item), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to '<i class="material-icons">edit</i>'.html_safe, edit_menu_item_path(@menu_item) %> |
+            <%= link_to '<i class="material-icons">delete</i>'.html_safe, menu_item_path(@menu_item), method: :delete, data: { confirm: "Are you sure?" } %>
           </td>
           <% end %>
       </tr>

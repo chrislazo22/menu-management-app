@@ -4,7 +4,7 @@ class MenuItem < ApplicationRecord
   has_attached_file :image, styles: { small: "100x100" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  validates_presence_of :name, :description
+  validates_presence_of :name, :description, :category 
   validates :price, presence: true,
             numericality: true
 end

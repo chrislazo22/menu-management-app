@@ -17,3 +17,7 @@
 .callout {
    padding-top: 13%;
 }
+
+strong.total_price {
+  font-size: 30px;
+}
