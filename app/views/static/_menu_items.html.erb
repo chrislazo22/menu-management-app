@@ -7,8 +7,10 @@
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
       <div class="card-action">
-        <div class="col s4 offset-s2">
-          <%= f.number_field :quantity, value: 1, min: 1 %>
+        <div class="row">
+          <div class="col s2 offset-s5">
+            <%= f.number_field :quantity, value: 1, min: 1 %>
+          </div>
         </div>
           <%= f.submit "Add to Cart", class: 'waves-effect btn' %><br>
       </div>
@@ -25,8 +27,10 @@
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
       <div class="card-action">
-        <div class="col s4 offset-s2">
-          <%= f.number_field :quantity, value: 1, min: 1 %>
+        <div class="row">
+          <div class="col s2 offset-s5">
+            <%= f.number_field :quantity, value: 1, min: 1 %>
+          </div>
         </div>
         <%= f.submit "Add to Cart", class: 'waves-effect btn' %>
       </div>
@@ -43,10 +47,12 @@
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
       <div class="card-action">
-        <div class="col s4 offset-s2">
-          <%= f.number_field :quantity, value: 1, min: 1 %>
+        <div class="row">
+          <div class="col s2 offset-s5">
+            <%= f.number_field :quantity, value: 1, min: 1 %>
+          </div>
         </div>
-          <%= f.submit "Add to Cart", class: 'waves-effect btn' %><br>
+        <%= f.submit "Add to Cart", class: 'waves-effect btn' %><br>
       </div>
     <% end %>
   <% end %>
@@ -61,8 +67,10 @@
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
       <div class="card-action">
-        <div class="col s4 offset-s2">
-          <%= f.number_field :quantity, value: 1, min: 1 %>
+        <div class="row">
+          <div class="col s2 offset-s5">
+            <%= f.number_field :quantity, value: 1, min: 1 %>
+          </div>
         </div>
         <%= f.submit "Add to Cart", class: 'waves-effect btn' %>
       </div>
