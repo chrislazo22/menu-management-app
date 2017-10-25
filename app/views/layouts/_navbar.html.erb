@@ -9,7 +9,10 @@
               <%= link_to "Home", root_path %>
             </li>
             <li class="<%= active?(menu_items_path) %>">
-              <%= link_to "Admin" %>
+              <%= link_to "Admin", menu_items_path %>
+            </li>
+            <li class="<%= active?(new_menu_item_path) %>">
+              <%= link_to "Create Menu Item", new_menu_item_path %>
             </li>
             <li>
               <div class="cart">
@@ -36,6 +39,9 @@
           <ul class="right hide-on-med-and-down">
             <li class="<%= active?(root_path) %>">
               <%= link_to "Home", root_path %>
+            </li>
+            <li class="<%= active?(menu_items_path) %>">
+              <%= link_to "Admin", menu_items_path %>
             </li>
             <li class="<%= active?(new_menu_item_path) %>">
               <%= link_to "Create Menu Item", new_menu_item_path %>

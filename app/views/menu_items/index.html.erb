@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="center-align">Menu Items</h2>
+  <table class="bordered highlight">
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
+      <% @menu_items.each do |menu_item| %>
+      <tr>
+        <td><%= menu_item.name %></td>
+        <td><%= menu_item.description %></td>
+        <td><%= menu_item.category %></td>
+        <td><%= menu_item.price %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
