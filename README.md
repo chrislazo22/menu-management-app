@@ -13,7 +13,7 @@ rails 5.1.4
 
 ## User Stories (Optional)
 
-* When the user sees their total order, they can add an optional tip of 10%, 15%, or 20%, and resubmit the order to see the total with tip.
+* Restrict the ability to enter, edit, and remove menu items to a logged-in administrator.
 
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
 
