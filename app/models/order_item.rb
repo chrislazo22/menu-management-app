@@ -8,14 +8,14 @@ class OrderItem < ApplicationRecord
   before_save  :set_total_price
 
   def unit_price
-    if persisted? # returns true if it is not a new record and was not destroyed
+    if persisted?
       self[:unit_price]
     else
       menu_item.price
     end
   end
 
-  def total_price # total price for menu_item in order
+  def total_price
     unit_price * quantity
   end
 

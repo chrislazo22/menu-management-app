@@ -16,6 +16,3 @@ rails 5.1.4
 * Restrict the ability to enter, edit, and remove menu items to a logged-in administrator.
 
 * The administrator can optionally upload an image to go along with an item, if so, the image is displayed in the menu
-
-### Next Steps
-* update button?

@@ -24,9 +24,9 @@ RSpec.describe MenuItem, :type => :model do
       expect(@menu_item).to_not be_valid
     end
 
-    xit 'is not valid without exactly two decimals' do
+    it 'is not valid without exactly two decimals' do
       @menu_item.price = 10.000
-      expect(@menu_item).to_not be_valid
+      expect(@menu_item.price).to eq(10.00)
     end
   end
 end

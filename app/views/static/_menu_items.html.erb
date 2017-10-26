@@ -2,7 +2,7 @@
 <% @menu_items.each do |menu_item| %>
   <% if menu_item.category == "Appetizer" %>
     <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
-    <%= menu_item.description %><br>
+    <%= truncate(menu_item.description, length: 300) %><br>
     <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
@@ -22,7 +22,7 @@
 <% @menu_items.each do |menu_item| %>
   <% if menu_item.category == "Main Course" %>
     <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
-    <%= menu_item.description %><br>
+    <%= truncate(menu_item.description, length: 300) %><br>
     <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
@@ -36,13 +36,13 @@
       </div>
     <% end %>
   <% end %>
-<% end %><br>
+<% end %>
 
 <h3>Side Dish</h3>
 <% @menu_items.each do |menu_item| %>
   <% if menu_item.category == "Side Dish" %>
     <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
-    <%= menu_item.description %><br>
+    <%= truncate(menu_item.description, length: 300) %><br>
     <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>
@@ -62,7 +62,7 @@
 <% @menu_items.each do |menu_item| %>
   <% if menu_item.category == "Dessert" %>
     <span class="card-title"><%= link_to menu_item.name, menu_item_path(menu_item) %> <%= number_to_currency menu_item.price %></span>
-    <%= menu_item.description %><br>
+    <%= truncate(menu_item.description, length: 300) %><br>
     <img class="circle z-depth-1"<%= image_tag menu_item.image.url(:small) if menu_item.image_file_name != nil %><br>
     <%= form_for(@order_item, remote: true) do |f| %>
       <%= f.hidden_field :menu_item_id, value: menu_item.id %>

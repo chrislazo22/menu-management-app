@@ -1,3 +1,12 @@
+<% if @menu_item.errors.any? %>
+  <ul>
+    <% @menu_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+<% else %>
+
 <div class="row">
   <div class="col s10 offset-s1">
     <div class="card">
