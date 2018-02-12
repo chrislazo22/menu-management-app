@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :menu_items
   resources :order_items, only: [:create, :update, :destroy]
   resource :carts, only: [:show]
+  post "/lucky", to: "carts#lucky"
+
 end

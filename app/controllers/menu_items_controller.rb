@@ -8,7 +8,7 @@ class MenuItemsController < ApplicationController
   end
 
   def new
-    @menu_item = MenuItem.new
+    @menu_items = MenuItem.new
   end
 
   def show

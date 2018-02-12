@@ -1,3 +1,15 @@
+<h3>Do you Feel Lucky?</h3>
+
+<%= form_tag "/lucky", name: "lucky" do %>
+  <%= label_tag :min_amount, "Minimum Amout" %>
+  <%= number_field_tag :min_amount %><br>
+
+  <%= label_tag :max_amount, "Maximum Amout" %>
+  <%= number_field_tag :max_amount %><br>
+
+  <%= submit_tag "I Feel Lucky" %>
+<% end %>
+
 <h3>Appetizers</h3>
 <% @menu_items.each do |menu_item| %>
   <% if menu_item.category == "Appetizer" %>

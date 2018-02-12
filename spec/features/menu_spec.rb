@@ -53,4 +53,15 @@ describe 'menu' do
       expect(page).to have_content("Two Pancakes")
     end
   end
+
+  describe "i feel lucky" do
+    it "can be created" do
+      visit root_path
+
+      fill_in :min_amount, with: 5.00
+      fill_in :max_amount, with: 100.00
+
+      click_on "I Feel Lucky"
+    end
+  end
 end
